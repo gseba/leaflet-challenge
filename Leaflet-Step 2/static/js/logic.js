@@ -99,7 +99,7 @@ function createMap(earthquakes) {
     Earthquakes: earthquakes
   };
 
-  // Create our map, giving it the streetmap and earthquakes layers to display on load
+  // Create our map, giving it the streetmap and earthquakes layers to display when prompted to load
   var myMap = L.map("map", {
     center: [
       37.09, -95.71
@@ -108,7 +108,7 @@ function createMap(earthquakes) {
     layers: [outdoorsmap, earthquakes, faultLine]
   });
 
-  // Create a layer control Pass in our baseMaps and overlayMaps, and Add the layer control to the map
+  // Create a layer control and pass in our baseMaps and overlayMaps
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
@@ -135,7 +135,7 @@ function createMap(earthquakes) {
                            '#ccff33';
   }
 
-  // Add legend to the map
+  // Add legend to the map 
   var legend = L.control({position: 'bottomright'});
   
   legend.onAdd = function() {
@@ -144,7 +144,7 @@ function createMap(earthquakes) {
           mags = [0, 1, 2, 3, 4, 5],
           labels = [];
   
-      // loop through our density intervals and generate a label with a colored square for each interval
+      // loop through our density levels and create a label with a color assigned to each range
       for (var i = 0; i < mags.length; i++) {
           div.innerHTML +=
               '<i style="background:' + getColor(mags[i] + 1) + '"></i> ' +
