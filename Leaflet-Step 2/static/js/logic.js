@@ -12,7 +12,7 @@ function createFeatures(quakeData) {
 
   // Define a function to run for each feature in the "features" array and create popup displaying the place and time of the earthquake
   function onEachFeature(feature, layer) {
-    layer.bindPopup("<br>The Epicenter is Located:<br>" + feature.properties.place + "<hr>" + "<br>Time of Activity is:<br>" + new Date(feature.properties.time) + "</h2>");
+    layer.bindPopup("<br>The Epicenter is Located:<br>" + feature.properties.place + "<hr>" + "<br>Time of Activity is:<br>" + new Date(feature.properties.time));
   }
 
   // Define function to create the circle radius based on the magnitude
